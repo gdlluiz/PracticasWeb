@@ -2,20 +2,52 @@ body{
   font-family: 'Allerta', sans-serif;
   margin: 0;/* Elimino el margen por defecto de boddy*/
 }
-button{
-  border-radius: 5px;
+input{
+  outline: 0;
+}
+input:focus, textarea:focus{
+  background: lightgray;
+}
+
+table{
+  width: 100%;
+}
+th{
+  background: #273B47;
+  color: white;
+  padding: 10px 20px;
+  text-align: left;
+}
+td{
+  padding: 20px;
+}
+table, td, th{
+  border: 1px solid #273B47;
+  border-collapse: collapse;
+}
+
+.background{
+  background-image: url("../imagenes/background.png");
+  background-size: cover; /* acomoda la imagen de fondo a que se vea mejor*/
+}
+.button{
+  border-radius: 12px;
   border: none;
   background: #FD324E;
   color: white;
-  padding: 7px; /* agrando mas el boton dandole un margen interno*/
+  padding: 7px 12px; /* agrando mas el boton dandole un margen interno*/
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  background: linear-gradient(to left, #FE344E, #FF7250);
 }
 .header{
   position: relative;/* agreso position relative para poner limite a la posicion del menu*/
 }
 .portada{
-  background-image: url("../imagenes/background.png");
   color:white;
   padding: 20px; /*agrego magen interno a elementos de portada*/
+  height: 500px;
 }
 .portada button{
   margin-bottom: 70px;
@@ -26,6 +58,9 @@ button{
   margin-top: 70px;/* agrando margen para expandir  imagen*/
   margin-bottom: 0;/*elimino margen inferior para unir mas los titulos*/
 }
+.titulo span{
+  text-decoration: underline;
+}
 .titulo-a{
   font-size: 24px;
   margin-top: 0;/*elimino margen superior para unir mas los titulos*/
@@ -33,10 +68,15 @@ button{
 .titulo-b{
   font-size: 50px;
 }
+.contenedor{
+  width: 800px;
+  margin: auto;
+  position: relative;
+}
 .guitarras{
   font-family: 'Montserrat', sans-serif;
   color: #1F313C;
-  position: relative;
+  margin-bottom: 60px;
 }
 .guitarras h2{
   font-size: 35px;
@@ -51,35 +91,25 @@ button{
 .menu li{
   display: inline-block;/*pongo  los li en forma lineal*/
   margin-left: 30px;/*separo cada elemento del menu com 30px  a la izquierda*/
-/*acomodo el menu  a la derecha*/
 }
+/*Uso Pseudo elementos agregando : */
+.menu li:before{
+  content: '∘';
+  font-size: 18px; /*agrando el elemento para un font equivalente*/
+  line-height: 20px; /* acomodo el tamano d eline a a 20px*/
+  color: white;
+}
+.menu a{
+  color: white;
+  text-decoration: none;
+}
+
 .logo{
   display: inline-block;
-}
-.contenedor{
-  width: 800px;
-  margin: auto;
-}
-.contenedor-guitarra-a{
-padding-left: 20px;
-}
-.contenedor-guitarra-b{
-  margin-left: 380px;
-  padding-left: 20px;
-}
-/* agrego la propiedad float  a las imagenes de los guitarras para moverlas */
-.izquierda{
-  float: left;
-  position: relative;
-  top: 80px;
-}
-.derecha{
-  float: right;
-  position: relative;
-  top: -127px;
+  margin-left: 0;
 }
 .guitarra{
-  margin: 10px;
+  margin: 10px 10px 40px 10px;
   padding: 10px;
   /*overflow: hidden;/* oculto desborde  creado por las imagenes*/
   border: 1px solid #1F313C;
@@ -87,4 +117,84 @@ padding-left: 20px;
 }
 .guitarra ol{
   padding: 0;/*quito pargen interno a las listas*/
+}
+.guitarra.b{
+  height: 190px;
+}
+
+.contenedor-guitarra-a{
+padding-left: 20px;
+}
+.contenedor-guitarra-b{
+  margin-left: 370px;
+  position: relative;
+  bottom: 70px;
+}
+/* agrego la propiedad float  a las imagenes de los guitarras para moverlas */
+.izquierda{
+  float: left;
+  position: relative;
+
+}
+.derecha{
+  float: right;
+  position: relative;
+  top: -127px;
+}
+.contacto img{ /* muevo la imagen  hacia arriba  de las opciones del footer*/
+  display: block;
+}
+.contacto strong{ /* separo cada titulo de contacto  con su contenido*/
+  display: block;
+}
+.contacto a{
+  color: white; /* cambio el color fuete de contacto a blanco*/
+  text-decoration: none; /* quito subrayado a contacto */
+  margin: 10px 10px 10px 0;
+}
+.contacto{
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footer{
+  background: #273B47;
+  padding: 50px 10px;
+}
+/* estilos al contenedor del footer*/
+.footer .contenedor{
+  display: flex;
+  justify-content: space-between;
+}
+.formulario{
+  display: flex;
+  width: 400px;
+  color: white;
+}
+.formulario label, .sexo, .intereses{
+  margin-bottom: 10px;
+}
+.sexo{
+  margin-top: 10px;
+}
+.parte1, .parte2{
+  display: flex;
+  flex-direction: column;
+}
+.parte1{
+  margin-right: 15px;
+}
+.intereses label{
+  font-size: 9px;
+}
+.parte2{
+  align-items: flex-start;;
+}
+.parte2 .button{
+  margin-top: 10px;
+}
+
+.tabla{
+  margin: 50px 0;
 }
