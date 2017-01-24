@@ -69,7 +69,7 @@ table, td, th{
   font-size: 50px;
 }
 .contenedor{
-  width: 800px;
+  max-width: 800px;
   margin: auto;
   position: relative;
 }
@@ -197,4 +197,60 @@ padding-left: 20px;
 
 .tabla{
   margin: 50px 0;
+}
+
+/*media-query*/
+
+@media screen and (max-width: 800px){
+/*adaptacion para tabletas*/
+  .titulo{
+    font-size: 45px;
+    margin-top: 30px;
+  }
+  .titulo-a{
+    font-size: 18px;
+  }
+  .portada{
+    height: auto;
+  }
+  .portada .button{
+    margin-bottom: 30px;
+    display: inline-block;
+  }
+
+    /* Guitarras*/
+
+    .guitarras{
+      text-align: center;
+    }
+    .guitarra li{
+      list-style: none;
+    }
+    .guitarra.b{
+      height: auto;
+    }
+    .izquierda, .derecha{
+      float: none;
+      position: static;
+    }
+
+    .titulo-b{
+      margin: 0;
+    }
+    .contenedor-guitarra-b{
+      position: static;
+      margin: 0;
+    }
+    .parte1{
+      margin-right: 10px;
+    }
+}
+
+/*adaptacion para moviles*/
+@media screen and (max-width: 650px) {
+  .menu{
+    border: 1px solid red;
+    position: static;
+  }
+
 }
